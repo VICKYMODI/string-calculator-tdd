@@ -26,5 +26,10 @@ describe('String Calculator', () => {
     expect(add('10\n20\n30')).toBe(60);
   });
 
+  test('should support different delimiters', () => {
+    expect(add('//;\n1;2')).toBe(3);
+    expect(add('//.\n1.2.3')).toBe(6);
+  })
+
 
 });
