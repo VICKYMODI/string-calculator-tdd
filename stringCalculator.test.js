@@ -21,5 +21,10 @@ describe('String Calculator', () => {
     expect(add('10,20,30,40')).toBe(100);
   });
 
-  
+  test('should handle new line as delimiter between numbers', () => {
+    expect(add('1\n2,3')).toBe(6);
+    expect(add('10\n20\n30')).toBe(60);
+  });
+
+
 });
