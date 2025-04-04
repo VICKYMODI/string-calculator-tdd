@@ -41,5 +41,10 @@ describe('String Calculator', () => {
     expect(add('1000,1001,2')).toBe(1002);
   });
 
+  test('should handle delimiters of any length', () => {
+    expect(add('//[***]\n1***2***3')).toBe(6);
+    expect(add('//[##]\n1##2##3')).toBe(6);
+  });
+
 
 });
