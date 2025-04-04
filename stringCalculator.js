@@ -29,7 +29,12 @@ function add(numbers) {
         throw new Error(`Negatives not allowed: ${negatives.join(', ')}`);
     }
 
-    return nums.reduce((sum, n) => sum + n, 0);
+    //return nums.reduce((sum, n) => sum + n, 0);
+
+    // Filter out numbers greater than 1000 before summing
+    return nums
+        .filter(n => n <= 1000)  // Only keep numbers less than or equal to 1000
+        .reduce((sum, n) => sum + n, 0);
 }
 
 
