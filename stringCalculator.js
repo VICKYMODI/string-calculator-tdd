@@ -23,6 +23,12 @@ function add(numbers) {
     
     const nums = normalizedInput.split(',').map(n => parseInt(n, 10));
 
+     // Check for negative numbers
+    const negatives = nums.filter(n => n < 0);
+    if (negatives.length > 0) {
+        throw new Error(`Negatives not allowed: ${negatives.join(', ')}`);
+    }
+
     return nums.reduce((sum, n) => sum + n, 0);
 }
 
